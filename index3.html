@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <title>Document</title>
+    <STYle>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #fff;
+            font-family: Vazirmatn;
+        }
+
+        .card {
+            position: relative;
+            height: 380px;
+            width: 480px;
+            transform-style: preserve-3d;
+            border-radius: 10px;
+        }
+
+        .face {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backface-visibility: hidden;
+            transition: 1.5s ease-in-out;
+            transform-style: preserve-3d;
+            border-radius: 10px;
+        }
+
+        .front {
+            background-color: #3bc2ff;
+            box-shadow:inset 0px 0px 30px 20px rgb(255, 255, 255);
+        }
+
+        .back {
+            background-color: #feca57;
+            box-shadow:inset 0px 0px 30px 20px rgb(255, 255, 255);
+            transform: perspective(500px) rotateY(180deg);
+        }
+
+        .card:hover .front {
+            transform: perspective(500px) rotateY(180deg);
+        }
+
+        .card:hover .back {
+            transform: perspective(500px) rotateY(360deg);
+        }
+
+        h2,h4 {
+            font-size: 2.6rem;
+            transform: perspective(500px) translateZ(50px);
+        }
+
+        .card:hover .face::after {
+            transform: perspective(500px) rotateY(180deg);
+        }
+
+        .face::after {
+            content: "";
+            width: 90%;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.2);
+            position: absolute;
+            bottom: -80px;
+            border-radius: 50%;
+            filter: blur(20px);
+        }
+
+        @media screen and (max-width:600px) {
+            h2,h4 {
+                font-size: 1.8rem;
+            }
+        }
+    </STYle>
+</head>
+
+<body>
+    <div class="card">
+        <div class="face front">
+            <h2>به زودی بر میگردیم</h2>
+            <h4>سایت در دست ساخته</h4>
+        </div>
+        <div class="face back">
+            <h2>امین حسین پور</h2>
+            <h2>09138925541</h2>
+        </div>
+    </div>
+</body>
+
+</html>
